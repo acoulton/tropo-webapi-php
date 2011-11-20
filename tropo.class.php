@@ -8,6 +8,7 @@
  * @author Mark Headd
  * @author Adam Kalsey
  */
+namespace Tropo;
 
 /**
  * The main Tropo WebAPI class.

@@ -8,6 +8,8 @@
  * @author Mark Headd
  */
 
+namespace Tropo;
+
 class SessionAPI extends RestBase {
 	
 	// URL for the Tropo session API.

@@ -232,10 +232,10 @@ class Tropo extends BaseClass {
 			  $params[$option] = array_key_exists($option, $params) ? $params[$option] : null;
 		  }
 			$choices = isset($params["choices"])
-			  ? new Choices(null, null, $params["choices"]) 
+			  ? new Choices(null, null, $params["choices"])
 			  : null;
 			$choices = isset($params["terminator"])
-			  ? new Choices(null, null, $params["terminator"]) 
+			  ? new Choices(null, null, $params["terminator"])
 			  : $choices;
 			$say = new Say($params["say"], $params["as"], null, $params["voice"]);
 			if (is_array($params['transcription'])) {
@@ -360,7 +360,7 @@ class Tropo extends BaseClass {
 		if(!is_object($transfer)) {
 			$choices = isset($params["choices"]) ? $params["choices"] : null;
 			$choices = isset($params["terminator"])
-			  ? new Choices(null, null, $params["terminator"]) 
+			  ? new Choices(null, null, $params["terminator"])
 			  : $choices;
 			$to = isset($params["to"]) ? $params["to"] : $transfer;
 			$p = array('answerOnMedia', 'ringRepeat', 'timeout', 'from', 'allowSignals', 'headers');
@@ -378,7 +378,7 @@ class Tropo extends BaseClass {
   	      $on = $params['on'];
   	    } else {
   	  	  if (strtolower($params['on']['event']) != 'ring') {
-  	  	    throw new TropoException("The only event allowed on transfer is 'ring'"); 
+  	  	    throw new TropoException("The only event allowed on transfer is 'ring'");
   	  	  }
   	  	  $on = new On('ring', null, new Say($params['on']['say']));
   	    }
@@ -1383,7 +1383,7 @@ class Session {
 		$this->_initialText = $session->session->initialText;
   		$this->_to = isset($session->session->to)
 		  ? array(
-		    "id" => $session->session->to->id,	
+		    "id" => $session->session->to->id,
 		    "channel" => $session->session->to->channel,
 		    "name" => $session->session->to->name,
 		    "network" => $session->session->to->network
@@ -1421,7 +1421,7 @@ class Session {
 	public function getAccountID() {
 		return $this->_accountId;
 	}
-	
+
 	public function getcallid() {
 		return $this->_callId;
 	}
@@ -1700,7 +1700,7 @@ class Endpoint extends BaseClass {
  * A helper class for wrapping exceptions. Can be modified for custom excpetion handling.
  *
  */
-class TropoException extends Exception { }
+class TropoException extends \Exception { }
 
 /**
  * Date Helper class.
